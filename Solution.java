@@ -43,14 +43,11 @@ class Chicken extends Bird {
 	public Chicken() {
 		this.sound = "Cluck, cluck";
 	}
+	public Chicken(String sound) {
+		this.sound = sound;
+	}
 	public void fly() {
 		System.out.println("Chicken can't fly");
-	}
-}
-
-class Rooster extends Chicken {
-	public Rooster() {
-		this.sound = "Cock-a-doodle-doo";
 	}
 }
 
@@ -69,7 +66,7 @@ public class Solution {
 		System.out.println(chicken.getSound());
 		chicken.fly();
 		
-		Rooster rooster = new Rooster();
+		Chicken rooster = new Chicken("Cock-a-doodle-doo");
 		System.out.println(rooster.getSound());
 	}
 }
