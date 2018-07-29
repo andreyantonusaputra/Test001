@@ -5,6 +5,7 @@ class Animal {
 	protected boolean canFly;
 	protected boolean canWalk;
 	protected boolean canSwim;
+	protected boolean canSing;
 	protected String size;
 	protected String color;
 	protected String food;
@@ -43,6 +44,12 @@ class Animal {
 	public void setCanSwim(boolean canSwim) {
 		this.canSwim = canSwim;
 	}
+	public boolean isCanSing() {
+		return canSing;
+	}
+	public void setCanSing(boolean canSing) {
+		this.canSing = canSing;
+	}
 	public void walk(){
 		if (canWalk) {
 			System.out.println("I am walking");
@@ -78,6 +85,7 @@ class Animal {
 
 class Bird extends Animal {
 	public Bird() {
+		this.canSing = true;
 		this.canWalk = true;
 	}
 	public void sing(String song) {
@@ -209,5 +217,40 @@ public class Solution {
 		Butterfly caterpillar = new Butterfly(false, true);
 		caterpillar.fly();
 		caterpillar.walk();
+		
+		Animal[] animals = new Animal[]{
+								new Bird(),
+								new Duck(),
+								new Chicken(),
+								new Chicken("Cock-a-doodle-doo"),
+								new Parrot(),
+								new Fish(),
+								new Shark(),
+								new Clownfish(),
+								new Dolphin(),
+								new Butterfly(),
+								};
+		int countCanFly = 0;
+		int countCanWalk = 0;
+		int countCanSwim = 0;
+		int countCanSing = 0;
+		for (Animal tmpAnimal : animals) {
+			if (tmpAnimal.canFly) {
+				countCanFly++;
+			}
+			if (tmpAnimal.canWalk) {
+				countCanWalk++;
+			}
+			if (tmpAnimal.canSwim) {
+				countCanSwim++;
+			}
+			if (tmpAnimal.canSing) {
+				countCanSing++;
+			}
+		}
+		System.out.println("canFly: " + countCanFly
+						+ "; canWalk: " + countCanWalk
+						+ "; canSwim: " + countCanSwim
+						+ "; canSing: " + countCanSing);
 	}
 }
