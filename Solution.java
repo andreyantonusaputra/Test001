@@ -51,6 +51,23 @@ class Chicken extends Bird {
 	}
 }
 
+class Parrot extends Bird {
+	private String areaOfLiving;
+	
+	public Parrot() {
+	}
+	public Parrot(String areaOfLiving, String sound) {
+		this.areaOfLiving = areaOfLiving;
+		this.sound = sound;
+	}
+	public String getAreaOfLiving() {
+		return areaOfLiving;
+	}
+	public void setAreaOfLiving(String areaOfLiving) {
+		this.areaOfLiving = areaOfLiving;
+	}
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
@@ -68,5 +85,14 @@ public class Solution {
 		
 		Chicken rooster = new Chicken("Cock-a-doodle-doo");
 		System.out.println(rooster.getSound());
+		
+		Parrot parrot1 = new Parrot("living with dogs","Woof, woof");
+		Parrot parrot2 = new Parrot("living with cats","Meow");
+		Parrot parrot3 = new Parrot("living near the rooster","Cock-a-doodle-doo");
+		Parrot parrot4 = new Parrot("living near the duck","Quack, quack");
+		System.out.println(parrot1.getSound());
+		System.out.println(parrot2.getSound());
+		System.out.println(parrot3.getSound());
+		System.out.println(parrot4.getSound());
 	}
 }
