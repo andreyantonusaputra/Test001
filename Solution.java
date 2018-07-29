@@ -3,6 +3,10 @@ package com.test;
 class Animal {
 	protected boolean canWalk;
 	protected boolean canSwim;
+	protected String size;
+	protected String color;
+	protected String food;
+	protected String remark;
 	
 	public Animal() {
 	}
@@ -24,6 +28,30 @@ class Animal {
 		} else {
 			System.out.println("I can't walk");
 		}
+	}
+	public String isSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	public String isColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String isFood() {
+		return food;
+	}
+	public void setFood(String food) {
+		this.food = food;
+	}
+	public String isRemark() {
+		return remark;
+	}
+	public void setRemark(String remark) {
+		this.remark = remark;
 	}
 }
 
@@ -90,6 +118,28 @@ class Fish extends Animal {
 	}
 }
 
+class Shark extends Fish {
+	public Shark() {
+		this.size = "Large";
+		this.color = "Grey";
+		this.food = "Other fish";
+	}
+	public void printInfo() {
+		System.out.println(this.size + "-" + this.color + "-" + this.food);
+	}
+}
+
+class Clownfish extends Fish {
+	public Clownfish() {
+		this.size = "Small";
+		this.color = "Colorful/Orange";
+		this.remark = "like to makes joke";
+	}
+	public void printInfo() {
+		System.out.println(this.size + "-" + this.color + "-" + this.remark);
+	}
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
@@ -120,5 +170,10 @@ public class Solution {
 		Fish fish = new Fish();
 		fish.walk();
 		System.out.println(fish.isCanSwim());
+		
+		Shark shark = new Shark();
+		shark.printInfo();
+		Clownfish clownfish = new Clownfish();
+		clownfish.printInfo();
 	}
 }
