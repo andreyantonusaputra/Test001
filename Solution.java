@@ -154,6 +154,16 @@ class Dolphin extends Animal {
 	}
 }
 
+class Butterfly extends Animal {
+	public Butterfly() {
+		this.canFly = true;
+	}
+	public Butterfly(boolean canFly, boolean canWalk) {
+		this.canFly = canFly;
+		this.canWalk = canWalk;
+	}
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
@@ -192,5 +202,12 @@ public class Solution {
 		
 		Dolphin dolphin = new Dolphin();
 		System.out.println(dolphin.isCanSwim());
+		
+		Butterfly butterfly = new Butterfly();
+		butterfly.fly();
+		
+		Butterfly caterpillar = new Butterfly(false, true);
+		caterpillar.fly();
+		caterpillar.walk();
 	}
 }
