@@ -10,8 +10,8 @@ class Bird extends Animal {
 	void fly() {
 		System.out.println("I am flying");
 	}
-	void sing() {
-		System.out.println("I am singing");
+	void sing(String song) {
+		System.out.println(song);
 	}
 }
 
@@ -20,6 +20,6 @@ public class Solution {
 		Bird bird = new Bird();
 		bird.walk();
 		bird.fly();
-		bird.sing();
+		bird.sing("I am singing");
 	}
 }
