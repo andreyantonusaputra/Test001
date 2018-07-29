@@ -1,6 +1,8 @@
 package com.test;
 
 class Animal {
+	protected String sound;
+	protected boolean canFly;
 	protected boolean canWalk;
 	protected boolean canSwim;
 	protected String size;
@@ -9,6 +11,25 @@ class Animal {
 	protected String remark;
 	
 	public Animal() {
+	}
+	public String getSound() {
+		return sound;
+	}
+	public void setSound(String sound) {
+		this.sound = sound;
+	}
+	public boolean isCanFly() {
+		return canFly;
+	}
+	public void setCanFly(boolean canFly) {
+		this.canFly = canFly;
+	}
+	public void fly(){
+		if (canFly) {
+			System.out.println("I am flying");
+		} else {
+			System.out.println("I can't fly");
+		}
 	}
 	public boolean isCanWalk() {
 		return canWalk;
@@ -56,22 +77,11 @@ class Animal {
 }
 
 class Bird extends Animal {
-	protected String sound;
-	
 	public Bird() {
 		this.canWalk = true;
 	}
-	public void fly() {
-		System.out.println("I am flying");
-	}
 	public void sing(String song) {
 		System.out.println(song);
-	}
-	public String getSound() {
-		return sound;
-	}
-	public void setSound(String sound) {
-		this.sound = sound;
 	}
 }
 
@@ -88,9 +98,6 @@ class Chicken extends Bird {
 	}
 	public Chicken(String sound) {
 		this.sound = sound;
-	}
-	public void fly() {
-		System.out.println("Chicken can't fly");
 	}
 }
 
@@ -140,6 +147,13 @@ class Clownfish extends Fish {
 	}
 }
 
+class Dolphin extends Animal {
+	public Dolphin() {
+		this.canSwim = true;
+		this.canWalk = false;
+	}
+}
+
 public class Solution {
 	public static void main(String[] args) {
 		Bird bird = new Bird();
@@ -175,5 +189,8 @@ public class Solution {
 		shark.printInfo();
 		Clownfish clownfish = new Clownfish();
 		clownfish.printInfo();
+		
+		Dolphin dolphin = new Dolphin();
+		System.out.println(dolphin.isCanSwim());
 	}
 }
